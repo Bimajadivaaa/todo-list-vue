@@ -56,6 +56,7 @@ onMounted(() => {
       <h2 class="title">
         Halo,
         <input type="text" placeholder="ketik namamu disini" v-model="name" />
+        
       </h2>
     </section>
 
