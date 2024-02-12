@@ -1,7 +1,7 @@
 :root {
   --primary: #ea40a4;
-  --business: #bc4749;
-  --personal: #f4a259;
+  --business: #60d394;
+  --personal: #081c15;
   --light: #eee;
   --grey: #888;
   --dark: #313154;
@@ -241,3 +241,4 @@ input:checked ~ .bubble::after {
   text-decoration: line-through;
   color: var(--grey);
 }
+

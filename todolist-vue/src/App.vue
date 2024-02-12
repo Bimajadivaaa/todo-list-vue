@@ -9,7 +9,7 @@ const input_category = ref(null);
 
 const todos_asc = computed(() =>
   todos.value.sort((a, b) => {
-    return b.createdAt - a.createdAt;
+    return a.createdAt - b.createdAt;
   })
 );
 
@@ -22,6 +22,7 @@ const addTodo = () => {
     content: input_content.value,
     category: input_category.value,
     done: false,
+    editable: false,
     createdAt: new Date().getTime(),
   });
 };
@@ -56,7 +57,6 @@ onMounted(() => {
       <h2 class="title">
         Halo,
         <input type="text" placeholder="ketik namamu disini" v-model="name" />
-        
       </h2>
     </section>
 
@@ -110,7 +110,11 @@ onMounted(() => {
         >
           <label>
             <input type="checkbox" v-model="todo.done" />
-            <span :class="`bubble ${todo.category}`"></span>
+            <span
+              :class="`bubble ${
+                todo.category == 'kuliah' ? 'business' : 'personal'
+              }`"
+            ></span>
           </label>
           <div class="todo-content">
             <input type="text" v-model="todo.content" />
